@@ -591,7 +591,7 @@ class RedisLibraryKeywords(object):
         - redis_conn: Redis connection object
 
         Examples:
-        | Disconnect from Redis | ${redis_conn} |
+        | Disconnect to Redis | ${redis_conn} |
         """
         try:
             redis_conn.close()
