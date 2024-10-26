@@ -315,5 +315,9 @@ class RedisLibraryTest(unittest.TestCase):
         with self.assertRaises(AssertionError):
             self.redis.delete_item_from_list_redis(self.fake_redis, 'Country', 2, 'Spain')
 
+    def test_disconect_to_redis(self):
+        self.assertIsNone(self.redis.disconnect_to_redis(self.fake_redis))
+        self.fake_redis.close.assert_called_once()
+
     def tearDown(self):
         self.fake_redis.flushall()
