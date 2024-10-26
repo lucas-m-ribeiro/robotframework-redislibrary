@@ -2,7 +2,7 @@
 
 __author__ = 'Traitanit Huangsri'
 __email__ = 'traitanit.hua@gmail.com'
-
+from unittest.mock import MagicMock, patch
 from RedisLibrary import RedisLibrary
 import unittest, fakeredis, ast
 
@@ -316,6 +316,7 @@ class RedisLibraryTest(unittest.TestCase):
             self.redis.delete_item_from_list_redis(self.fake_redis, 'Country', 2, 'Spain')
 
     def test_disconect_to_redis(self):
+        self.fake_redis.close = MagicMock()
         self.assertIsNone(self.redis.disconnect_to_redis(self.fake_redis))
         self.fake_redis.close.assert_called_once()
 

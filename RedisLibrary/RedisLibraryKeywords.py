@@ -594,7 +594,7 @@ class RedisLibraryKeywords(object):
         | Disconnect to Redis | ${redis_conn} |
         """
         try:
-            redis_conn.connection_pool.disconnect()
+            redis_conn.close()
             logger.info("Disconnection successful")
         except Exception as ex:
             logger.error(f"Failed to disconnect: {ex}")
