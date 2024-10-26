@@ -597,5 +597,5 @@ class RedisLibraryKeywords(object):
             redis_conn.close()
             logger.info("Disconnection successful")
         except Exception as ex:
-            logger.error("Failed to disconnect:"(ex))
+            logger.error(f"Failed to disconnect: {ex}")
             raise Exception(str(ex))
