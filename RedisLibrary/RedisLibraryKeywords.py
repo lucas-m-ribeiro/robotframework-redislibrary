@@ -583,15 +583,15 @@ class RedisLibraryKeywords(object):
         redis_conn.lset(list_name, index, 'DELETE_ITEM')
         redis_conn.lrem(list_name, 1, 'DELETE_ITEM')
 
-    @keyword('Disconnect to Redis')
-    def disconnect_to_redis(self, redis_conn):
+    @keyword('Disconnect from Redis')
+    def disconnect_from_redis(self, redis_conn):
         """Securely disconnect from Redis database.
 
         Arguments:
         - redis_conn: Redis connection object
 
         Examples:
-        | Disconnect to Redis | ${redis_conn} |
+        | Disconnect from Redis | ${redis_conn} |
         """
         try:
             redis_conn.close()
